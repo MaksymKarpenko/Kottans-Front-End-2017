@@ -1,0 +1,19 @@
+{
+  "name": "kottans_front_end_2017",
+  "version": "1.0.0",
+  "description": "test assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaksymKarpenko/Kottans-Front-End-2017.git"
+  },
+  "author": "Karpenko Maksym",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaksymKarpenko/Kottans-Front-End-2017/issues"
+  },
+  "homepage": "https://github.com/MaksymKarpenko/Kottans-Front-End-2017#readme"
+}
