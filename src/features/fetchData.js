@@ -1,3 +1,6 @@
+import parseData from './parse-data.js';
+import repositories from './repositories.js';
+import render from './render.js';
 
 const container = document.querySelector('.container');
 let status = (response) => {  
