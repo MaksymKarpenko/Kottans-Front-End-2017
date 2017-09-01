@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:600");
-
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +12,6 @@ html, body {
   font: 12px/1 'Open Sans', sans-serif;
 }
 
-
 .wrapper {margin: 20px auto;}
 
 [class*="col-"] {
@@ -25,15 +23,15 @@ html, body {
   padding: 20px;
 }
 @media all and (max-width: 500px){
-  .no-mobile {display: none;}
+	.no-mobile {display: none;}
 }
 
 @media all and (min-width: 500px) {
   .wrapper {
     padding: 0 20px;
-   background-color: #e1e1e1;
-   padding-top: 20px;
-   border-radius: 5px;
+	 background-color: #e1e1e1;
+	 padding-top: 20px;
+	 border-radius: 5px;
   }
 
   .row {display: flex;}
@@ -66,9 +64,9 @@ h2 {
 }
 
 h3 {
-  font: 600 15px/1 'Open Sans', sans-serif;
-  color: #999;
-  margin: 20px 0;
+	font: 600 15px/1 'Open Sans', sans-serif;
+	color: #999;
+	margin: 20px 0;
 }
 
 p {
@@ -77,15 +75,15 @@ p {
 }
 
 a {
-  color: #333;
-  text-decoration: none;
+	color: #333;
+	text-decoration: none;
 }
 a:hover {text-decoration: underline;}
 
 /* Just so you can get an impression of what it looks like when the height changes without spamming the code with useless text. */
 .blank-col {
-  min-height: 150px;
-  max-height: 150px;
+	min-height: 150px;
+	max-height: 150px;
 }
 
 .sticky {
@@ -97,21 +95,21 @@ a:hover {text-decoration: underline;}
 }
 
 .no-back {
-   background-color: #f1f1f1; /* make sure to change this to the background color */
+	 background-color: #f1f1f1; /* make sure to change this to the background color */
   }
 
 .warn {background: #FFDB4D;}
 .note {
-  background: #5CADFF;
-  color: #fff;
+	background: #5CADFF;
+	color: #fff;
 }
 .error {
-  background: #FF5353;
-  color: #fff;
+	background: #FF5353;
+	color: #fff;
 }
 .correct {
-  background: #33D685;
-  color: #fff;
+	background: #33D685;
+	color: #fff;
 }
 .rounded {border-radius: 100px;}
 
@@ -129,11 +127,11 @@ a:hover {text-decoration: underline;}
 .text-right {text-align: right;}
 
 .back-img {
-  /* Use on columns only! */
-  background-image: url(http://xendox.com/assets/img/header_bg.jpg);
-  height: 150px;
-  background-size:cover;
-  color: #fff; /*change this to the best color with your background */
+	/* Use on columns only! */
+	background-image: url(http://xendox.com/assets/img/header_bg.jpg);
+	height: 150px;
+	background-size:cover;
+	color: #fff; /*change this to the best color with your background */
 }
 
 .full-width { margin-bottom: 0; }
@@ -146,7 +144,7 @@ a:hover {text-decoration: underline;}
 }
 
 @media all and (min-width: 500px) {
-  .full-width {
+	.full-width {
     margin-bottom: 20px;
     margin-right: 0;
   }
