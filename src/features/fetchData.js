@@ -18,7 +18,7 @@ let json = (response) => {
 export default (url, request) => {
 fetch(url, { 
     method: "GET",
-    header: {
+    headers: {
       'Accept': 'application/vnd.github.mercy-preview+json'
   }
 })
