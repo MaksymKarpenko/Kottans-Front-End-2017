@@ -16,22 +16,22 @@ let json = (response) => {
 }
 
 export default (url, request) => {
-  fetch(url)
+fetch(url, { 
+    method: "GET",
+    header: {
+      'Accept': 'application/vnd.github.mercy-preview+json'
+  }
+})
   .then(status)  
   .then(json)  
   .then( (data) => {  
     //console.log('Request succeeded with JSON response', data);
-     if(data.login){
-        request = data;
-        console.log(request);
-     }else {
         request = data;
         console.log(request);
         const repos = parseData(request);
         for(let repo of repos){
             render(container, repositories(repo));
         }
-     }
   })
   
   .catch( (error) => {  

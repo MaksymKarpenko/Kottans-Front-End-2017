@@ -6,25 +6,75 @@
 </head>
 <body>
 <header>
-	<h1>Content goes here</h1>
-	<form >
-		<input type = "text" name="name" class = "inputSearch" placeholder="enter">
-		<input type="button" value = "ok" class ="submit">
-	</form>
+	<div class="auth_block">
+		<div class="input-form">
+			<form >
+				<input type = "text" name="name" class = "inputSearch">
+				<span class ="submit">submit</span>
+			</form>
+		</div>
+	</div>		
 </header>
-	<aside>
-		<div>info about owner</div>
-	</aside>
-	<nav>
-		<div class="search">search</div>
-		<div class="filter">filter</div>
-		<div class="sort">sort</div>
-	</nav>
-	<main>
-		<section>
-			<div class="container">repositories</div>
-		</section>
-	</main>
+	
+	<div class="content">
+		<nav>
+			<div class="filter">
+				<span>filter</span>
+					<ul class ="filter_list">
+						<li>
+							<span>has open issues </span> 
+							<input type="checkbox" name="vehicle"/>
+						</li>
+						<li>
+							<span>has topics</span>
+							<input type="checkbox" name="vehicle"/>
+						</li>
+						<li>
+							<span>starred</span>
+							<input type="checkbox" name="vehicle"/>
+						</li>
+						<li>
+							<span>update</span>
+							<input type="checkbox" name="vehicle"/>
+						</li>
+						<li>
+							<span>type</span>
+							<input type="checkbox" name="vehicle"/>
+						</li>
+						<li>
+							<span>language</span>
+							<input type="checkbox" name="vehicle"/>
+						</li>
+					</ul>
+			</div>
+			<div class="sort">
+				<span>sort</span>
+					<ul class="sort_list">
+						<li>
+							<span>repo name</span>
+							<input type="checkbox" name="vehicle"/>
+						</li>
+						<li>
+							<span>stars count</span>
+							<input type="checkbox" name="vehicle"/>
+						</li>
+						<li>
+							<span>open issue count</span>
+							<input type="checkbox" name="vehicle"/>
+						</li>
+						<li>
+							<span>updated date</span> 
+							<input type="checkbox" name="vehicle"/>
+						</li>
+					</ul>
+			</div>
+		</nav>
+
+		<main>
+			<div class="container"></div>
+		</main>
+		
+	</div>
 <footer>
 		<div>footer</div>
 </footer>

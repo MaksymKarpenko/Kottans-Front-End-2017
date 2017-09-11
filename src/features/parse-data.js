@@ -3,7 +3,9 @@ export default (items) => items.map((repo) => {
 		name: repo.name,
 		description: repo.description,
 		date: repo.updated_at,
-		language: repo.language
+		language: repo.language,
+		star: repo.stargazers_count,
+		forks: repo.forks
 	}
 })
 

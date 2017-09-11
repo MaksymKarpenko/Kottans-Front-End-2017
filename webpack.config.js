@@ -33,7 +33,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Project Demo',
-            template: './src/index.html' // Load a custom template (ejs by default see the FAQ for details)
+            template: './src/index.html' 
         }),
         new ExtractTextPlugin({
             filename: 'app.css',

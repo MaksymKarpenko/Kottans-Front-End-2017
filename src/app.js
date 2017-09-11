@@ -1,4 +1,5 @@
 const css = require('./style/app.scss');
+//const reset = require('./style/reset.scss');
 import fetchData from './features/fetchData.js';
 
 let user;
@@ -9,10 +10,8 @@ const field = document.querySelector('.inputSearch');
 
 btn.addEventListener('click', () => { 
   name = field.value; 
-  let url = `https://api.github.com/users/${name}`;
   let reposUrl = `https://api.github.com/users/${name}/repos`;
-   fetchData(url, user)
-   fetchData(reposUrl, repo);
+      fetchData(reposUrl, repo);
     //console.log(repo);
 });
 

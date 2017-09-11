@@ -1,158 +1,248 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:600");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-html, body {
-  height: 100%;
-  background: #f1f1f1;
-  color: #333;
-  font: 12px/1 'Open Sans', sans-serif;
-}
-
-
-.wrapper {margin: 20px auto;}
-
-[class*="col-"] {
-  margin-bottom: 20px;
-  min-height: 30px;
-  background: #fff;
-  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 20px;
-}
-@media all and (max-width: 500px){
-  .no-mobile {display: none;}
-}
-
-@media all and (min-width: 500px) {
-  .wrapper {
-    padding: 0 20px;
-   background-color: #e1e1e1;
-   padding-top: 20px;
-   border-radius: 5px;
-  }
-
-  .row {display: flex;}
-
-  [class*="col-"] {margin-right: 20px;}
-
-  [class*="col-"]:last-child {margin-right: 0;}
-
-  .col-1 {flex: 1;}
-  .col-2 {flex: 2;}
-  .col-3 {flex: 3;}
-  .col-4 {flex: 4;}
-  .col-5 {flex: 5;}
-  .col-6 {flex: 6;}
-  .col-7 {flex: 7;}
-  .col-8 {flex: 8;}
-  .col-9 {flex: 9;}
-  .col-10 {flex: 10;}
-  .col-11 {flex: 11;}
-  .col-12 {flex: 12;}
-}
-@media all and (min-width: 1000px) {
-  .wrapper {max-width: 1000px;}
-}
-
-h2 {
-  font: 600 20px/1 'Open Sans', sans-serif;
-  color: #888;
-  margin: 20px 0;
-}
-
-h3 {
-  font: 600 15px/1 'Open Sans', sans-serif;
-  color: #999;
-  margin: 20px 0;
-}
-
-p {
-  font: 12px/1 'Open Sans', sans-serif;
-  color: #777;
-}
-
-a {
-  color: #333;
-  text-decoration: none;
-}
-a:hover {text-decoration: underline;}
-
-/* Just so you can get an impression of what it looks like when the height changes without spamming the code with useless text. */
-.blank-col {
-  min-height: 150px;
-  max-height: 150px;
-}
-
-.sticky {
-  font: 600 20px/1 'Open Sans', sans-serif;
-  top: 0;
-  position:fixed;
+html,
+body {
   width: 100%;
-  max-height: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.no-back {
-   background-color: #f1f1f1; /* make sure to change this to the background color */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+$color-github: #4078c0;
+$gray: #ccc;
+$text: #555;
+$spacing: 20px;
+
+@mixin clearFix(){
+  &:before,
+  &:after{
+    content: " "; 
+    display: table; 
   }
 
-.warn {background: #FFDB4D;}
-.note {
-  background: #5CADFF;
-  color: #fff;
-}
-.error {
-  background: #FF5353;
-  color: #fff;
-}
-.correct {
-  background: #33D685;
-  color: #fff;
-}
-.rounded {border-radius: 100px;}
-
-.top-r {border-top-right-radius: 100px;}
-.top-l {border-top-left-radius: 100px;}
-.bottom-r {border-bottom-right-radius: 100px;}
-.bottom-l {border-bottom-left-radius: 100px;}
-
-.rad-l {border-radius: 100px 0 0 100px;}
-.rad-r {border-radius: 0 100px 100px 0;}
-
-.hidden-col {visibility: hidden;}
-
-.text-left {text-align: left;}
-.text-right {text-align: right;}
-
-.back-img {
-  /* Use on columns only! */
-  background-image: url(http://xendox.com/assets/img/header_bg.jpg);
-  height: 150px;
-  background-size:cover;
-  color: #fff; /*change this to the best color with your background */
-}
-
-.full-width { margin-bottom: 0; }
-
-.full-width:last-child { margin-bottom: 20px; }
-
-.space-off,
-.space-off:last-child {
-  margin-bottom: 0;
-}
-
-@media all and (min-width: 500px) {
-  .full-width {
-    margin-bottom: 20px;
-    margin-right: 0;
+  &:after{
+    display: block;
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    visibility: hidden;
   }
-
-  .space-off,
-  .space-off:last-child {
-    margin-bottom: 0;
+  &{
+    *zoom: 1;
   }
+}
+
+@mixin blockCenter() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  width: 100%;
+    @include clearFix();
+}
+
+.repository {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid $gray;
+  margin: $spacing/2;
+  padding: $spacing;
+  color: $text;
+  text-decoration: none;
+  font-size: 13px;
+  flex: 1;
+  min-width: 250px;
+  
+  > .repo_name {
+    margin-top: 0;
+    color: $color-github;
+    font-size: 15px;
+  }
+}
+
+.github-card__meta {
+  margin-right: $spacing;
+  
+  > i {
+    font-size: 16px;
+  }
+}
+
+header {
+  width: 100%;
+  @include blockCenter();
+      > .auth_block {
+          width: 100%;
+          padding: 15px;
+          background-color: #f1f1f1;
+            @include blockCenter();
+              > .input-form {
+                  width: 50%;
+              }
+        }
+}
+
+.inputSearch {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  border-radius: 1px;
+  margin-bottom: 15px;
+}
+
+.submit {
+    width: 100%;
+    background: red;
+    color: white;
+    display: block;
+    text-align: center;
+    padding: 0.5em;
+    cursor: pointer;
+}
+.content {
+   @include clearFix();
+   width: 100%;
+   flex-grow: 1;;
+}
+
+nav {
+  display: block;
+  width: 100%;
+  background: grey;
+  color: white;
+  text-align: center;
+     @include blockCenter();
+     @include clearFix();
+}
+.filter_list, .sort_list {
+  margin: 5px 0 0 0;
+  padding: 0;
+  position: absolute;
+  text-decoration: none;
+  list-style: none;
+  display: none;
+      @include  clearFix();
+}
+
+li {
+  opacity: .8;
+  float: left;
+  margin: 0 auto;
+  padding: 15px;
+  background: #000;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+    &:hover {
+      background: green;
+    }
+}
+.filter, .sort{
+  width: 50%;
+  float: left;
+  padding: 5px;
+  cursor: pointer;
+    &:hover {
+    background-color: blue;
+      > ul {
+        display: block;
+      }
+    }
+}
+
+.filter {
+   &:hover {
+      .filter_list {
+            display: block;
+      }
+   }
+}
+
+.sort {
+   &:hover {
+      .sort_list {
+            display: block;
+      }
+   }
+}
+
+
+main {
+  display:block;
+  float: left;
+}
+
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  height: 6%;
+  text-align: center;
+  vertical-align: bottom;
+  background-color: #000;
+  color: #fff;
+    @include clearFix();
+}
+
+
+#star-five {
+   margin: 50px 0;
+   position: relative;
+   display: block;
+   color: red;
+   width: 0px;
+   height: 0px;
+   border-right:  100px solid transparent;
+   border-bottom: 70px  solid red;
+   border-left:   100px solid transparent;
+   -moz-transform:    rotate(35deg);
+   -webkit-transform: rotate(35deg);
+   -ms-transform:     rotate(35deg);
+   -o-transform:      rotate(35deg);
+}
+#star-five:before {
+   border-bottom: 80px solid red;
+   border-left: 30px solid transparent;
+   border-right: 30px solid transparent;
+   position: absolute;
+   height: 0;
+   width: 0;
+   top: -45px;
+   left: -65px;
+   display: block;
+   content: '';
+   -webkit-transform: rotate(-35deg);
+   -moz-transform:    rotate(-35deg);
+   -ms-transform:     rotate(-35deg);
+   -o-transform:      rotate(-35deg);
+
+}
+#star-five:after {
+   position: absolute;
+   display: block;
+   color: red;
+   top: 3px;
+   left: -105px;
+   width: 0px;
+   height: 0px;
+   border-right: 100px solid transparent;
+   border-bottom: 70px solid red;
+   border-left: 100px solid transparent;
+   -webkit-transform: rotate(-70deg);
+   -moz-transform:    rotate(-70deg);
+   -ms-transform:     rotate(-70deg);
+   -o-transform:      rotate(-70deg);
+   content: '';
 }
