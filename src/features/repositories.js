@@ -1,5 +1,4 @@
 export default (repo) => {
-	console.log(repo.stargazers_count);
 	let getDateAgo = (date, days) =>{
 
   		let dayAgo = Date.parse(date) - Date.parse(days);

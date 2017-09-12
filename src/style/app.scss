@@ -21,6 +21,15 @@ $gray: #ccc;
 $text: #555;
 $spacing: 20px;
 
+@mixin list() {
+  margin: 5px 0 0 0;
+  padding: 0;
+  position: absolute;
+  text-decoration: none;
+  list-style: none;
+  display: none;
+}
+
 @mixin clearFix(){
   &:before,
   &:after{
@@ -129,27 +138,41 @@ nav {
      @include clearFix();
 }
 .filter_list, .sort_list {
-  margin: 5px 0 0 0;
-  padding: 0;
-  position: absolute;
-  text-decoration: none;
-  list-style: none;
-  display: none;
-      @include  clearFix();
+    @include list();
+    @include clearFix();
+}
+
+.sub-menu {
+    display: none;
+    margin-top: 15px;
+    width: 75px;
 }
 
 li {
   opacity: .8;
   float: left;
   margin: 0 auto;
-  padding: 15px;
+  padding: 15px 20px;
   background: #000;
   text-align: center;
   border-bottom: 1px solid #fff;
     &:hover {
       background: green;
-    }
+      .sub-menu {
+          display: flex;
+          flex-direction: column;
+          flex-basis: 75px;
+          }
+      .languages {
+          display: block;
+      }
+    }   
+  }
+
+.languages {
+  display: none;
 }
+
 .filter, .sort{
   width: 50%;
   float: left;

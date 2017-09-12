@@ -1,7 +1,9 @@
 import parseData from './parse-data.js';
 import repositories from './repositories.js';
 import render from './render.js';
+import languageList from '../filter/language-list.js'
 
+export let Arr;
 const container = document.querySelector('.container');
 let status = (response) => {  
   if (response.status >= 200 && response.status < 300) {  
@@ -26,7 +28,8 @@ fetch(url, {
   .then(json)  
   .then( (data) => {  
     //console.log('Request succeeded with JSON response', data);
-        request = data;
+         request = data;
+         languageList(request);
         console.log(request);
         const repos = parseData(request);
         for(let repo of repos){
